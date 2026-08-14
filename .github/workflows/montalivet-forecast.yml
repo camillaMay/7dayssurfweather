@@ -1,5 +1,8 @@
 name: Fetch Montalivet Forecast Data
 
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: '0 5 * * *'  # Daily at 7 AM UTC
@@ -10,10 +13,11 @@ jobs:
   fetch-forecast:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Fetch forecast data
         run: |
+          mkdir -p data
           curl -s "https://api.open-meteo.com/v1/forecast?latitude=45.381&longitude=-1.116&daily=sunrise,sunset,weather_code&hourly=temperature_2m,precipitation,wind_speed_10m,wind_direction_10m,cloud_cover&forecast_days=7" > data/weather-forecast.json
           curl -s "https://marine-api.open-meteo.com/v1/marine?latitude=45.381&longitude=-1.116&hourly=wave_height,wind_wave_height,wind_wave_direction,secondary_swell_wave_height,secondary_swell_wave_period,secondary_swell_wave_direction,swell_wave_height,swell_wave_direction,swell_wave_period,tertiary_swell_wave_height,tertiary_swell_wave_period,tertiary_swell_wave_direction,sea_level_height_msl,sea_surface_temperature&forecast_days=7" > data/marine-forecast.json
       
@@ -23,9 +27,12 @@ jobs:
           curl -s "https://marine-api.open-meteo.com/v1/marine?latitude=45.381&longitude=-1.116&current=wave_height,wind_wave_height,wind_wave_direction,swell_wave_height,swell_wave_direction,swell_wave_period,sea_surface_temperature" > data/marine-current.json
       
       - name: Commit and push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --local user.email "camillaMay@users.noreply.github.com"
           git config --local user.name "camillaMay"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
           git add data/
           git commit -m "Update Montalivet forecast data" || true
           git push
