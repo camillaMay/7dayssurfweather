@@ -1,5 +1,8 @@
 name: Fetch Surf Forecast HTML
 
+permissions:
+  contents: write
+
 on:
   schedule:
     # Runs once a day at 06:00 UTC (adjust as needed)
@@ -18,14 +21,14 @@ jobs:
           curl -sL \
             -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
             "https://www.surf-forecast.com/breaks/Montalivetles-Bains/forecasts/latest" \
-            -o montalivet-hourly.html
+            -o data/montalivet-hourly.html
 
       - name: Fetch raw HTML (16-day page)
         run: |
           curl -sL \
             -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
             "https://www.surf-forecast.com/breaks/Montalivetles-Bains/forecasts/latest/six_day" \
-            -o montalivet-16day.html
+            -o data/montalivet-16day.html
 
       - name: Commit and push if changed
         run: |
