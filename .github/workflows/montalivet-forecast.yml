@@ -32,6 +32,11 @@ jobs:
             "https://www.surf-forecast.com/breaks/Montalivetles-Bains/forecasts/latest/six_day" \
             -o data/montalivet-16day.html
 
+      - name: Fetch ocean current data from Open-Meteo
+        run: |
+          curl -s "https://marine-api.open-meteo.com/v1/marine?latitude=45.38&longitude=-1.12&hourly=ocean_current_u,ocean_current_v&timezone=UTC&forecast_days=16" \
+            -o data/montalivet-current.json
+
       - name: Parse to clean JSON
         run: python3 scripts/parse_surf.py data/montalivet-hourly.html data/montalivet-16day.html data/swell.json
       
