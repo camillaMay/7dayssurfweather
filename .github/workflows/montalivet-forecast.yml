@@ -34,11 +34,11 @@ jobs:
 
       - name: Fetch ocean current data from Open-Meteo
         run: |
-          curl -s "https://marine-api.open-meteo.com/v1/marine?latitude=45.381&longitude=-1.116&forecast_days=7&minutely_15=ocean_current_velocity,ocean_current_direction" \
+          curl -s "https://marine-api.open-meteo.com/v1/marine?latitude=45.381&longitude=-1.116&forecast_days=16&minutely_15=ocean_current_velocity,ocean_current_direction&timezone=UTC" \
             -o data/montalivet-current.json
 
       - name: Parse to clean JSON
-        run: python3 scripts/parse_surf.py data/montalivet-hourly.html data/montalivet-16day.html data/swell.json
+        run: python3 scripts/parse_surf.py data/montalivet-hourly.html data/montalivet-16day.html data/swell.json data/montalivet-current.json
       
       - name: Commit and push if changed
         run: |
