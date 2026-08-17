@@ -74,8 +74,29 @@ def parse_sea_temperature_today(raw):
     return float(m.group(1)) if m else None
 
 
-def load_current_data(path):
-    """Load Open-Meteo current data and return dict keyed by ISO datetime."""
+def mean_direction(directions):
+    """Compute mean of circular direction values (0-360 degrees)."""
+    if not directions:
+        return None
+    # Convert to radians and compute mean unit vector
+    rad_list = [math.radians(d) for d in directions if d is not None]
+    if not rad_list:
+        return None
+    sin_sum = sum(math.sin(r) for r in rad_list)
+    cos_sum = sum(math.cos(r) for r in rad_list)
+    mean_rad = math.atan2(sin_sum, cos_sum)
+    mean_deg = math.degrees(mean_rad)
+    return (mean_deg + 360) % 360
+
+
+def load_and_aggregate_current_data(path):
+    """Load Open-Meteo 15-minute current data and aggregate to hourly.
+    
+    Returns dict keyed by ISO datetime (top of hour): {
+        "ocean_current_speed_kmh": peak velocity in that hour,
+        "ocean_current_direction_deg": mean direction in that hour
+    }
+    """
     try:
         with open(path) as f:
             data = json.load(f)
@@ -89,104 +110,84 @@ def load_current_data(path):
         print(f"Warning: error loading current data from {path}: {e}", file=sys.stderr)
         return {}
     
-    current_by_time = {}
-    times = data.get("hourly", {}).get("time", [])
-    u_vals = data.get("hourly", {}).get("ocean_current_u", [])
-    v_vals = data.get("hourly", {}).get("ocean_current_v", [])
+    times = data.get("minutely_15", {}).get("time", [])
+    velocities = data.get("minutely_15", {}).get("ocean_current_velocity", [])
+    directions = data.get("minutely_15", {}).get("ocean_current_direction", [])
     
+    # Group 15-minute data by hour
+    hourly_data = {}
     for i, timestamp in enumerate(times):
-        if i < len(u_vals) and i < len(v_vals):
-            u = u_vals[i]
-            v = v_vals[i]
-            # Store both components and derived values
-            speed_ms = math.sqrt(u**2 + v**2) if u is not None and v is not None else None
-            speed_kmh = speed_ms * 3.6 if speed_ms is not None else None
-            # Direction in degrees: 0=N, 90=E, 180=S, 270=W
-            # v is north-south (positive=N), u is east-west (positive=E)
-            if u is not None and v is not None:
-                direction_rad = math.atan2(u, v)  # atan2(E, N)
-                direction_deg = (math.degrees(direction_rad) + 360) % 360
-            else:
-                direction_deg = None
-            
-            current_by_time[timestamp] = {
-                "current_u_ms": u,  # east-west component (m/s)
-                "current_v_ms": v,  # north-south component (m/s), positive = northward
-                "current_speed_ms": speed_ms,
-                "current_speed_kmh": speed_kmh,
-                "current_direction_deg": direction_deg,  # 0=N, 90=E, 180=S, 270=W
-            }
+        if i >= len(velocities) or i >= len(directions):
+            continue
+        
+        # Extract hour from timestamp (e.g., "2026-08-17T05:30" -> "2026-08-17T05:00")
+        hour_key = timestamp[:13] + ":00"
+        
+        if hour_key not in hourly_data:
+            hourly_data[hour_key] = {"velocities": [], "directions": []}
+        
+        velocity = velocities[i]
+        direction = directions[i]
+        
+        if velocity is not None:
+            hourly_data[hour_key]["velocities"].append(velocity)
+        if direction is not None:
+            hourly_data[hour_key]["directions"].append(direction)
+    
+    # Compute peak velocity and mean direction per hour
+    current_by_time = {}
+    for hour_key, data_lists in hourly_data.items():
+        peak_velocity = max(data_lists["velocities"]) if data_lists["velocities"] else None
+        mean_dir = mean_direction(data_lists["directions"]) if data_lists["directions"] else None
+        
+        current_by_time[hour_key] = {
+            "ocean_current_speed_kmh": peak_velocity,
+            "ocean_current_direction_deg": mean_dir,
+        }
     
     return current_by_time
 
 
-def get_row_cells(raw, row_name, next_row_name):
-    """Return list of <td> inner-HTML strings for a given data-row, in column order."""
-    start_marker = f'data-row="{row_name}"'
-    idx = raw.find(start_marker)
-    if idx == -1:
-        return []
-    end_marker = f'data-row="{next_row_name}"' if next_row_name else None
-    end = raw.find(end_marker, idx) if end_marker else len(raw)
-    if end == -1:
-        end = len(raw)
-    section = raw[idx:end]
-    return re.findall(r'<td class="forecast-table__cell">(.*?)</td>\s*(?=<td|</tr)', section, re.S)
-
-
-def parse_wind(cell):
-    if not cell:
-        return None
-    m = re.search(r'data-speed="([\d.]+)"', cell)
-    d = re.search(r'wind-icon__letters">([A-Z]+)<', cell)
+def match_current_to_forecast(date_str, current_by_time):
+    """Match forecast time string to Open-Meteo hourly timestamp.
+    
+    date_str format from surf-forecast: "Monday 17  5 AM"
+    ISO format: "2026-08-17T05:00"
+    """
+    # Extract hour and AM/PM
+    m = re.search(r'(\d{1,2})\s+(AM|PM)', date_str)
     if not m:
         return None
-    return {"speed_kmh": float(m.group(1)), "direction": d.group(1) if d else None}
-
-
-def parse_tide(cell):
-    if not cell:
+    
+    hour_str = m.group(1)
+    ampm = m.group(2)
+    
+    try:
+        hour = int(hour_str)
+        if ampm == "PM" and hour != 12:
+            hour += 12
+        elif ampm == "AM" and hour == 12:
+            hour = 0
+    except:
         return None
-    m = re.search(r'tide-time__time[^"]*">\s*([\d:APM]+)</span><span class="tide-time__height">([-\d.]+)', cell)
-    if not m:
+    
+    # Extract day from date_str
+    d = re.search(r'(\d{1,2})\s+', date_str)
+    if not d:
         return None
-    return {"time": m.group(1).strip(), "height_m": float(m.group(2))}
-
-
-def parse_temp(cell):
-    if not cell:
-        return None
-    m = re.search(r'data-value="([-\d.]+)"', cell)
-    return float(m.group(1)) if m else None
-
-
-def parse_rain(cell):
-    if not cell:
-        return None
-    m = re.search(r'data-value="([\d.]+)"', cell)
-    return float(m.group(1)) if m else 0.0
-
-
-def parse_weather(cell):
-    if not cell:
-        return None
-    m = re.search(r'alt="([^"]+)"', cell)
-    return m.group(1).strip() if m else None
-
-
-def parse_suntime(cell):
-    if not cell:
-        return None
-    m = re.search(r'<span>([^<]+)</span>', cell)
-    if not m:
-        return None
-    v = m.group(1).strip()
-    return None if v == '\u2014' else v
-
-
-def parse_sea_temperature_today(raw):
-    m = re.search(r"sea temperature is.*?data-value=\"([\d.]+)\"", raw, re.S)
-    return float(m.group(1)) if m else None
+    day = d.group(1)
+    
+    # Build ISO timestamp candidates (assume August 2026)
+    candidates = [
+        f"2026-08-{day}T{hour:02d}:00",
+        f"2026-08-{int(day)+1}T{hour:02d}:00",
+    ]
+    
+    for candidate in candidates:
+        if candidate in current_by_time:
+            return current_by_time[candidate]
+    
+    return None
 
 
 def parse_page(path):
@@ -243,10 +244,26 @@ def parse_page(path):
 
 
 if __name__ == "__main__":
-    hourly_path, sixday_path, out_path = sys.argv[1], sys.argv[2], sys.argv[3]
+    hourly_path, sixday_path, out_path, current_path = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
 
+    # Load forecast data
     hourly, sea_temp_h = parse_page(hourly_path)
     sixday, sea_temp_s = parse_page(sixday_path)
+
+    # Load and aggregate 15-minute current data to hourly
+    current_by_time = load_and_aggregate_current_data(current_path)
+
+    # Merge current data into forecast
+    for forecast_slot in hourly + sixday:
+        current_data = match_current_to_forecast(forecast_slot["date"], current_by_time)
+        if current_data:
+            forecast_slot.update(current_data)
+        else:
+            # Add null placeholders
+            forecast_slot.update({
+                "ocean_current_speed_kmh": None,
+                "ocean_current_direction_deg": None,
+            })
 
     result = {
         "sea_temperature_today_c": sea_temp_h or sea_temp_s,
