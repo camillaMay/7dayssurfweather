@@ -34,7 +34,7 @@ jobs:
 
       - name: Fetch ocean current data from Open-Meteo
         run: |
-          curl -s "https://marine-api.open-meteo.com/v1/marine?latitude=45.38&longitude=-1.12&hourly=ocean_current_u,ocean_current_v&timezone=UTC&forecast_days=16" \
+          curl -s "https://marine-api.open-meteo.com/v1/marine?latitude=45.381&longitude=-1.116&forecast_days=7&minutely_15=ocean_current_velocity,ocean_current_direction" \
             -o data/montalivet-current.json
 
       - name: Parse to clean JSON
