@@ -79,10 +79,45 @@ def load_current_data(path):
     try:
         with open(path) as f:
             data = json.load(f)
-    exceptimport re
-import json
-import html
-import sys
+    except FileNotFoundError:
+        print(f"Warning: current data file not found at {path}", file=sys.stderr)
+        return {}
+    except json.JSONDecodeError as e:
+        print(f"Warning: could not parse JSON from {path}: {e}", file=sys.stderr)
+        return {}
+    except Exception as e:
+        print(f"Warning: error loading current data from {path}: {e}", file=sys.stderr)
+        return {}
+    
+    current_by_time = {}
+    times = data.get("hourly", {}).get("time", [])
+    u_vals = data.get("hourly", {}).get("ocean_current_u", [])
+    v_vals = data.get("hourly", {}).get("ocean_current_v", [])
+    
+    for i, timestamp in enumerate(times):
+        if i < len(u_vals) and i < len(v_vals):
+            u = u_vals[i]
+            v = v_vals[i]
+            # Store both components and derived values
+            speed_ms = math.sqrt(u**2 + v**2) if u is not None and v is not None else None
+            speed_kmh = speed_ms * 3.6 if speed_ms is not None else None
+            # Direction in degrees: 0=N, 90=E, 180=S, 270=W
+            # v is north-south (positive=N), u is east-west (positive=E)
+            if u is not None and v is not None:
+                direction_rad = math.atan2(u, v)  # atan2(E, N)
+                direction_deg = (math.degrees(direction_rad) + 360) % 360
+            else:
+                direction_deg = None
+            
+            current_by_time[timestamp] = {
+                "current_u_ms": u,  # east-west component (m/s)
+                "current_v_ms": v,  # north-south component (m/s), positive = northward
+                "current_speed_ms": speed_ms,
+                "current_speed_kmh": speed_kmh,
+                "current_direction_deg": direction_deg,  # 0=N, 90=E, 180=S, 270=W
+            }
+    
+    return current_by_time
 
 
 def get_row_cells(raw, row_name, next_row_name):
