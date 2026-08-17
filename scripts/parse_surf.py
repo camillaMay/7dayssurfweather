@@ -121,18 +121,23 @@ def load_and_aggregate_current_data(path):
             alongshore = velocity * math.cos(direction_rad)
             hourly_data[hour_key]["alongshore_components"].append(alongshore)
     
-    # Compute peak alongshore magnitude per hour (max absolute value with sign preserved)
+# Compute peak alongshore magnitude per hour (max absolute value with sign preserved)
     current_by_time = {}
     for hour_key, data_dict in hourly_data.items():
         components = data_dict["alongshore_components"]
         if components:
             # Peak: find the component with largest absolute value, keep its sign
             peak_alongshore = max(components, key=abs)
+            peak_rounded = round(peak_alongshore, 1)
+            # Orientation: positive = northward, negative = southward
+            orientation = "N" if peak_alongshore > 0 else "S" if peak_alongshore < 0 else "none"
         else:
-            peak_alongshore = None
+            peak_rounded = None
+            orientation = None
         
         current_by_time[hour_key] = {
-            "ocean_current_alongshore_kmh": peak_alongshore,
+            "ocean_current_alongshore_kmh": peak_rounded,
+            "ocean_current_orientation": orientation,
         }
     
     return current_by_time
@@ -243,15 +248,16 @@ if __name__ == "__main__":
     # Load and aggregate 15-minute current data to hourly
     current_by_time = load_and_aggregate_current_data(current_path)
 
-    # Merge current data into forecast
+# Merge current data into forecast
     for forecast_slot in hourly + sixday:
         current_data = match_current_to_forecast(forecast_slot["date"], current_by_time)
         if current_data:
             forecast_slot.update(current_data)
         else:
-            # Add null placeholder
+            # Add null placeholders
             forecast_slot.update({
                 "ocean_current_alongshore_kmh": None,
+                "ocean_current_orientation": None,
             })
 
     result = {
