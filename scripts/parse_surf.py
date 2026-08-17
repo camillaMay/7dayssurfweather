@@ -2,6 +2,69 @@ import re
 import json
 import html
 import sys
+
+
+def get_row_cells(raw, row_name, next_row_name):
+    """Return list of <td> inner-HTML strings for a given data-row, in column order."""
+    start_marker = f'data-row="{row_name}"'
+    idx = raw.find(start_marker)
+    if idx == -1:
+        return []
+    end_marker = f'data-row="{next_row_name}"' if next_row_name else None
+    end = raw.find(end_marker, idx) if end_marker else len(raw)
+    if end == -1:
+        end = len(raw)
+    section = raw[idx:end]
+    return re.findall(r'<td class="forecast-table__cell">(.*?)</td>\s*(?=<td|</tr)', section, re.S)
+
+
+def parse_wind(cell):
+    if not cell:
+        return None
+    m = re.search(r'data-speed="([\d.]+)"', cell)
+    d = re.search(r'wind-icon__letters">([A-Z]+)<', cell)
+    if not m:
+        return None
+    return {"speed_kmh": float(m.group(1)), "direction": d.group(1) if d else None}
+
+
+def parse_tide(cell):
+    if not cell:
+        return None
+    m = re.search(r'tide-time__time[^"]*">\s*([\d:APM]+)</span><span class="tide-time__height">([-\d.]+)', cell)
+    if not m:
+        return None
+    return {"time": m.group(1).strip(), "height_m": float(m.group(2))}
+
+
+def parse_temp(cell):
+    if not cell:
+        return None
+    m = re.search(r'data-value="([-\d.]+)"', cell)
+    return float(m.group(1)) if m else None
+
+
+def parse_rain(cell):
+    if not cell:
+        return None
+    m = re.search(r'data-value="([\d.]+)"', cell)
+    return float(m.group(1)) if m else 0.0
+
+
+def parse_weather(cell):
+    if not cell:
+        return None
+    m = re.search(r'alt="([^"]+)"', cell)
+    return m.group(1).strip() if m else None
+
+
+def parse_suntime(cell):
+    if not cell:
+        return None
+    m = re.search(r'<span>([^<]+)import re
+import json
+import html
+import sys
 import math
 
 
