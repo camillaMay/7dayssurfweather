@@ -28,8 +28,7 @@
       "weather_code": "part cloud",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": 0.6,
-      "ocean_current_direction_deg": 26.9437913299476
+      "ocean_current_alongshore_kmh": 0.570633909777092
     },
     {
       "date": "Monday 17  2 PM",
@@ -55,8 +54,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": 1.0,
-      "ocean_current_direction_deg": 24.5
+      "ocean_current_alongshore_kmh": 0.9271838545667874
     },
     {
       "date": "Monday 17  5 PM",
@@ -85,8 +83,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": 0.7,
-      "ocean_current_direction_deg": 167.4793618069159
+      "ocean_current_alongshore_kmh": -0.7
     },
     {
       "date": "Monday 17  8 PM",
@@ -118,8 +115,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": "9:08",
-      "ocean_current_speed_kmh": 1.0,
-      "ocean_current_direction_deg": 196.5
+      "ocean_current_alongshore_kmh": -0.9271838545667874
     },
     {
       "date": "Monday 17 11 PM",
@@ -160,8 +156,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": 0.5,
-      "ocean_current_direction_deg": 245.1609304892777
+      "ocean_current_alongshore_kmh": -0.35355339059327384
     },
     {
       "date": "Tuesday 18  2 AM",
@@ -199,8 +194,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": 0.9,
-      "ocean_current_direction_deg": 0.0
+      "ocean_current_alongshore_kmh": 0.9
     },
     {
       "date": "Tuesday 18  5 AM",
@@ -241,8 +235,7 @@
       "weather_code": "clear",
       "sunrise": "7:07",
       "sunset": null,
-      "ocean_current_speed_kmh": 0.3,
-      "ocean_current_direction_deg": 112.5
+      "ocean_current_alongshore_kmh": -0.21213203435596423
     },
     {
       "date": "Tuesday 18  8 AM",
@@ -280,8 +273,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": 0.7,
-      "ocean_current_direction_deg": 164.0
+      "ocean_current_alongshore_kmh": -0.6792070083931975
     },
     {
       "date": "Tuesday 18 11 AM",
@@ -316,8 +308,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": 0.7,
-      "ocean_current_direction_deg": 180.0
+      "ocean_current_alongshore_kmh": -0.7
     },
     {
       "date": "Tuesday 18  2 PM",
@@ -355,8 +346,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": 0.2,
-      "ocean_current_direction_deg": 0.0
+      "ocean_current_alongshore_kmh": 0.2
     },
     {
       "date": "Tuesday 18  5 PM",
@@ -391,8 +381,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": 0.6,
-      "ocean_current_direction_deg": 219.5
+      "ocean_current_alongshore_kmh": -0.49742254353302506
     },
     {
       "date": "Tuesday 18  8 PM",
@@ -430,8 +419,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": "9:07",
-      "ocean_current_speed_kmh": 0.6,
-      "ocean_current_direction_deg": 213.99999999999997
+      "ocean_current_alongshore_kmh": -0.49742254353302506
     },
     {
       "date": "Tuesday 18 11 PM",
@@ -472,8 +460,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": 0.6,
-      "ocean_current_direction_deg": 193.52793026468473
+      "ocean_current_alongshore_kmh": -0.5706339097770922
     },
     {
       "date": "Wednesday 19  2 AM",
@@ -511,8 +498,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": 0.4,
-      "ocean_current_direction_deg": 27.0
+      "ocean_current_alongshore_kmh": 0.3564026096753472
     },
     {
       "date": "Wednesday 19  5 AM",
@@ -553,8 +539,7 @@
       "weather_code": "clear",
       "sunrise": "7:09",
       "sunset": null,
-      "ocean_current_speed_kmh": 0.4,
-      "ocean_current_direction_deg": 144.0
+      "ocean_current_alongshore_kmh": -0.35640260967534715
     },
     {
       "date": "Wednesday 19  8 AM",
@@ -586,8 +571,7 @@
       "weather_code": "part cloud",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": 0.7,
-      "ocean_current_direction_deg": 180.0
+      "ocean_current_alongshore_kmh": -0.7
     },
     {
       "date": "Wednesday 19 11 AM",
@@ -622,8 +606,7 @@
       "weather_code": "part cloud",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": 0.6,
-      "ocean_current_direction_deg": 193.52793026468473
+      "ocean_current_alongshore_kmh": -0.5706339097770922
     },
     {
       "date": "Wednesday 19  2 PM",
@@ -661,8 +644,7 @@
       "weather_code": "part cloud",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": 0.5,
-      "ocean_current_direction_deg": 45.0
+      "ocean_current_alongshore_kmh": 0.3535533905932738
     },
     {
       "date": "Wednesday 19  5 PM",
@@ -709,8 +691,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": 0.6,
-      "ocean_current_direction_deg": 133.27833068197697
+      "ocean_current_alongshore_kmh": -0.49742254353302495
     },
     {
       "date": "Wednesday 19  8 PM",
@@ -754,8 +735,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": "9:06",
-      "ocean_current_speed_kmh": 0.7,
-      "ocean_current_direction_deg": 166.0
+      "ocean_current_alongshore_kmh": -0.6792070083931975
     },
     {
       "date": "Wednesday 19 11 PM",
@@ -802,8 +782,7 @@
       "weather_code": "part cloud",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": 0.8,
-      "ocean_current_direction_deg": 200.5
+      "ocean_current_alongshore_kmh": -0.7128052193506944
     }
   ],
   "sixteen_day": [
@@ -834,8 +813,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": null,
-      "ocean_current_direction_deg": null
+      "ocean_current_alongshore_kmh": null
     },
     {
       "date": "Monday 17 Night",
@@ -879,8 +857,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": "9:08",
-      "ocean_current_speed_kmh": null,
-      "ocean_current_direction_deg": null
+      "ocean_current_alongshore_kmh": null
     },
     {
       "date": "Tuesday 18 AM",
@@ -915,8 +892,7 @@
       "weather_code": "clear",
       "sunrise": "7:07",
       "sunset": null,
-      "ocean_current_speed_kmh": 0.6,
-      "ocean_current_direction_deg": 213.99999999999997
+      "ocean_current_alongshore_kmh": -0.49742254353302506
     },
     {
       "date": "Tuesday 18 PM",
@@ -951,8 +927,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": null,
-      "ocean_current_direction_deg": null
+      "ocean_current_alongshore_kmh": null
     },
     {
       "date": "Tuesday 18 Night",
@@ -996,8 +971,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": "9:07",
-      "ocean_current_speed_kmh": null,
-      "ocean_current_direction_deg": null
+      "ocean_current_alongshore_kmh": null
     },
     {
       "date": "Wednesday 19 AM",
@@ -1032,8 +1006,7 @@
       "weather_code": "part cloud",
       "sunrise": "7:09",
       "sunset": null,
-      "ocean_current_speed_kmh": 0.7,
-      "ocean_current_direction_deg": 166.0
+      "ocean_current_alongshore_kmh": -0.6792070083931975
     },
     {
       "date": "Wednesday 19 PM",
@@ -1080,8 +1053,7 @@
       "weather_code": "part cloud",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": null,
-      "ocean_current_direction_deg": null
+      "ocean_current_alongshore_kmh": null
     },
     {
       "date": "Wednesday 19 Night",
@@ -1125,8 +1097,7 @@
       "weather_code": "part cloud",
       "sunrise": null,
       "sunset": "9:06",
-      "ocean_current_speed_kmh": null,
-      "ocean_current_direction_deg": null
+      "ocean_current_alongshore_kmh": null
     },
     {
       "date": "Thursday 20 AM",
@@ -1155,8 +1126,7 @@
       "weather_code": "cloud",
       "sunrise": "7:09",
       "sunset": null,
-      "ocean_current_speed_kmh": 0.7,
-      "ocean_current_direction_deg": 193.99999999999997
+      "ocean_current_alongshore_kmh": -0.6792070083931975
     },
     {
       "date": "Thursday 20 PM",
@@ -1185,8 +1155,7 @@
       "weather_code": "cloud",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": null,
-      "ocean_current_direction_deg": null
+      "ocean_current_alongshore_kmh": null
     },
     {
       "date": "Thursday 20 Night",
@@ -1221,8 +1190,7 @@
       "weather_code": "part cloud",
       "sunrise": null,
       "sunset": "9:04",
-      "ocean_current_speed_kmh": null,
-      "ocean_current_direction_deg": null
+      "ocean_current_alongshore_kmh": null
     },
     {
       "date": "Friday 21 AM",
@@ -1254,8 +1222,7 @@
       "weather_code": "clear",
       "sunrise": "7:11",
       "sunset": null,
-      "ocean_current_speed_kmh": 0.7,
-      "ocean_current_direction_deg": 180.0
+      "ocean_current_alongshore_kmh": -0.7
     },
     {
       "date": "Friday 21 PM",
@@ -1284,8 +1251,7 @@
       "weather_code": "clear",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": null,
-      "ocean_current_direction_deg": null
+      "ocean_current_alongshore_kmh": null
     },
     {
       "date": "Friday 21 Night",
@@ -1314,8 +1280,7 @@
       "weather_code": "part cloud",
       "sunrise": null,
       "sunset": "9:02",
-      "ocean_current_speed_kmh": null,
-      "ocean_current_direction_deg": null
+      "ocean_current_alongshore_kmh": null
     },
     {
       "date": "Saturday 22 AM",
@@ -1353,8 +1318,7 @@
       "weather_code": "cloud",
       "sunrise": "7:13",
       "sunset": null,
-      "ocean_current_speed_kmh": 0.8,
-      "ocean_current_direction_deg": 202.5
+      "ocean_current_alongshore_kmh": -0.7128052193506944
     },
     {
       "date": "Saturday 22 PM",
@@ -1395,8 +1359,7 @@
       "weather_code": "cloud",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": null,
-      "ocean_current_direction_deg": null
+      "ocean_current_alongshore_kmh": null
     },
     {
       "date": "Saturday 22 Night",
@@ -1443,8 +1406,7 @@
       "weather_code": "rain showers",
       "sunrise": null,
       "sunset": "9:00",
-      "ocean_current_speed_kmh": null,
-      "ocean_current_direction_deg": null
+      "ocean_current_alongshore_kmh": null
     },
     {
       "date": "Sunday 23 AM",
@@ -1491,8 +1453,7 @@
       "weather_code": "rain showers",
       "sunrise": "7:13",
       "sunset": null,
-      "ocean_current_speed_kmh": 0.3,
-      "ocean_current_direction_deg": 224.99999999999997
+      "ocean_current_alongshore_kmh": -0.2121320343559643
     },
     {
       "date": "Sunday 23 PM",
@@ -1533,8 +1494,7 @@
       "weather_code": "part cloud",
       "sunrise": null,
       "sunset": "8:59",
-      "ocean_current_speed_kmh": null,
-      "ocean_current_direction_deg": null
+      "ocean_current_alongshore_kmh": null
     },
     {
       "date": "Sunday 23 Night",
@@ -1578,8 +1538,7 @@
       "weather_code": "part cloud",
       "sunrise": null,
       "sunset": null,
-      "ocean_current_speed_kmh": null,
-      "ocean_current_direction_deg": null
+      "ocean_current_alongshore_kmh": null
     }
   ]
 }
