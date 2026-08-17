@@ -2,69 +2,6 @@ import re
 import json
 import html
 import sys
-
-
-def get_row_cells(raw, row_name, next_row_name):
-    """Return list of <td> inner-HTML strings for a given data-row, in column order."""
-    start_marker = f'data-row="{row_name}"'
-    idx = raw.find(start_marker)
-    if idx == -1:
-        return []
-    end_marker = f'data-row="{next_row_name}"' if next_row_name else None
-    end = raw.find(end_marker, idx) if end_marker else len(raw)
-    if end == -1:
-        end = len(raw)
-    section = raw[idx:end]
-    return re.findall(r'<td class="forecast-table__cell">(.*?)</td>\s*(?=<td|</tr)', section, re.S)
-
-
-def parse_wind(cell):
-    if not cell:
-        return None
-    m = re.search(r'data-speed="([\d.]+)"', cell)
-    d = re.search(r'wind-icon__letters">([A-Z]+)<', cell)
-    if not m:
-        return None
-    return {"speed_kmh": float(m.group(1)), "direction": d.group(1) if d else None}
-
-
-def parse_tide(cell):
-    if not cell:
-        return None
-    m = re.search(r'tide-time__time[^"]*">\s*([\d:APM]+)</span><span class="tide-time__height">([-\d.]+)', cell)
-    if not m:
-        return None
-    return {"time": m.group(1).strip(), "height_m": float(m.group(2))}
-
-
-def parse_temp(cell):
-    if not cell:
-        return None
-    m = re.search(r'data-value="([-\d.]+)"', cell)
-    return float(m.group(1)) if m else None
-
-
-def parse_rain(cell):
-    if not cell:
-        return None
-    m = re.search(r'data-value="([\d.]+)"', cell)
-    return float(m.group(1)) if m else 0.0
-
-
-def parse_weather(cell):
-    if not cell:
-        return None
-    m = re.search(r'alt="([^"]+)"', cell)
-    return m.group(1).strip() if m else None
-
-
-def parse_suntime(cell):
-    if not cell:
-        return None
-    m = re.search(r'<span>([^<]+)import re
-import json
-import html
-import sys
 import math
 
 
@@ -137,27 +74,11 @@ def parse_sea_temperature_today(raw):
     return float(m.group(1)) if m else None
 
 
-def mean_direction(directions):
-    """Compute mean of circular direction values (0-360 degrees)."""
-    if not directions:
-        return None
-    # Convert to radians and compute mean unit vector
-    rad_list = [math.radians(d) for d in directions if d is not None]
-    if not rad_list:
-        return None
-    sin_sum = sum(math.sin(r) for r in rad_list)
-    cos_sum = sum(math.cos(r) for r in rad_list)
-    mean_rad = math.atan2(sin_sum, cos_sum)
-    mean_deg = math.degrees(mean_rad)
-    return (mean_deg + 360) % 360
-
-
 def load_and_aggregate_current_data(path):
     """Load Open-Meteo 15-minute current data and aggregate to hourly.
     
     Returns dict keyed by ISO datetime (top of hour): {
-        "ocean_current_speed_kmh": peak velocity in that hour,
-        "ocean_current_direction_deg": mean direction in that hour
+        "ocean_current_alongshore_kmh": peak northward velocity in that hour (positive = north, negative = south)
     }
     """
     try:
@@ -187,25 +108,31 @@ def load_and_aggregate_current_data(path):
         hour_key = timestamp[:13] + ":00"
         
         if hour_key not in hourly_data:
-            hourly_data[hour_key] = {"velocities": [], "directions": []}
+            hourly_data[hour_key] = {"alongshore_components": []}
         
         velocity = velocities[i]
         direction = directions[i]
         
-        if velocity is not None:
-            hourly_data[hour_key]["velocities"].append(velocity)
-        if direction is not None:
-            hourly_data[hour_key]["directions"].append(direction)
+        # Convert velocity + direction to alongshore (N-S) component
+        # direction 0° = N, 90° = E, 180° = S, 270° = W
+        # alongshore: positive = north, negative = south
+        if velocity is not None and direction is not None:
+            direction_rad = math.radians(direction)
+            alongshore = velocity * math.cos(direction_rad)
+            hourly_data[hour_key]["alongshore_components"].append(alongshore)
     
-    # Compute peak velocity and mean direction per hour
+    # Compute peak alongshore magnitude per hour (max absolute value with sign preserved)
     current_by_time = {}
-    for hour_key, data_lists in hourly_data.items():
-        peak_velocity = max(data_lists["velocities"]) if data_lists["velocities"] else None
-        mean_dir = mean_direction(data_lists["directions"]) if data_lists["directions"] else None
+    for hour_key, data_dict in hourly_data.items():
+        components = data_dict["alongshore_components"]
+        if components:
+            # Peak: find the component with largest absolute value, keep its sign
+            peak_alongshore = max(components, key=abs)
+        else:
+            peak_alongshore = None
         
         current_by_time[hour_key] = {
-            "ocean_current_speed_kmh": peak_velocity,
-            "ocean_current_direction_deg": mean_dir,
+            "ocean_current_alongshore_kmh": peak_alongshore,
         }
     
     return current_by_time
@@ -322,10 +249,9 @@ if __name__ == "__main__":
         if current_data:
             forecast_slot.update(current_data)
         else:
-            # Add null placeholders
+            # Add null placeholder
             forecast_slot.update({
-                "ocean_current_speed_kmh": None,
-                "ocean_current_direction_deg": None,
+                "ocean_current_alongshore_kmh": None,
             })
 
     result = {
