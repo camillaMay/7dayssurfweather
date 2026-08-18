@@ -46,7 +46,9 @@ jobs:
           HOURS=(8 11 14 17 20 22)
           for HOUR in ${HOURS[@]}; do
             URL="https://images.webcamgalore.com/webcam-vendays-montalivet-0-${HOUR}-24883-full.jpg"
-            curl -s "$URL" -o "data/webcam/montalivet-south-0-${HOUR}.jpg"
+             # Convert UTC+3 to CEST (UTC+2): subtract 1 hour
+            LOCAL_HOUR=$((HOUR - 1))
+            curl -s "$URL" -o "data/webcam/montalivet-south-0-${LOCAL_HOUR}.jpg"
           done
       
       - name: Commit and push if changed
