@@ -39,6 +39,16 @@ jobs:
 
       - name: Parse to clean JSON
         run: python3 scripts/parse_surf.py data/montalivet-hourly.html data/montalivet-16day.html data/swell.json data/montalivet-current.json
+
+      - name: Fetch panoramic webcam images
+        run: |
+          mkdir -p data/webcam
+          HOURS=(8 11 14 17 20 22)
+          for HOUR in ${HOURS[@]}; do
+            HOUR_PADDED=$(printf "%02d" $HOUR)
+            URL="https://images.webcamgalore.com/webcam-vendays-montalivet-0-${HOUR_PADDED}-24883-full.jpg"
+            curl -s "$URL" -o "data/webcam/montalivet-south-0-${HOUR_PADDED}.jpg"
+          done
       
       - name: Commit and push if changed
         run: |
