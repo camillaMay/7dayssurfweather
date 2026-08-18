@@ -39,8 +39,8 @@ jobs:
 
       - name: Parse to clean JSON
         run: python3 scripts/parse_surf.py data/montalivet-hourly.html data/montalivet-16day.html data/swell.json data/montalivet-current.json
-
-     - name: Fetch south beach webcam images
+      
+      - name: Fetch south beach webcam images
         run: |
           mkdir -p data/webcam
           HOURS=(8 11 14 17 20 22)
