@@ -2,129 +2,6 @@
   "sea_temperature_today_c": 19.8,
   "hourly": [
     {
-      "date": "Friday 25  5 PM",
-      "swells": [
-        {
-          "height_m": 1.0,
-          "direction": "W",
-          "period_s": 18,
-          "energy_kj": 600
-        },
-        {
-          "height_m": 0.6,
-          "direction": "WNW",
-          "period_s": 10,
-          "energy_kj": 82
-        },
-        {
-          "height_m": 1.2,
-          "direction": "W",
-          "period_s": 18,
-          "energy_kj": 871
-        }
-      ],
-      "combined_energy_kj": 1553,
-      "wind_state": "on",
-      "rating": 0,
-      "wind": {
-        "speed_kmh": 22.0,
-        "direction": "W"
-      },
-      "tide_high": {
-        "time": "4:43PM",
-        "height_m": 4.05
-      },
-      "tide_low": null,
-      "air_temp_c": 20.0,
-      "rain_mm": 0.0,
-      "weather_code": "clear",
-      "sunrise": null,
-      "sunset": "7:57",
-      "ocean_current_alongshore_kmh": null,
-      "ocean_current_orientation": null
-    },
-    {
-      "date": "Friday 25  8 PM",
-      "swells": [
-        {
-          "height_m": 1.2,
-          "direction": "W",
-          "period_s": 16,
-          "energy_kj": 723
-        },
-        {
-          "height_m": 0.6,
-          "direction": "WNW",
-          "period_s": 10,
-          "energy_kj": 78
-        },
-        {
-          "height_m": 0.8,
-          "direction": "W",
-          "period_s": 10,
-          "energy_kj": 127
-        }
-      ],
-      "combined_energy_kj": 928,
-      "wind_state": "on",
-      "rating": 0,
-      "wind": {
-        "speed_kmh": 19.0,
-        "direction": "W"
-      },
-      "tide_high": null,
-      "tide_low": null,
-      "air_temp_c": 20.0,
-      "rain_mm": 0.0,
-      "weather_code": "clear",
-      "sunrise": null,
-      "sunset": null,
-      "ocean_current_alongshore_kmh": null,
-      "ocean_current_orientation": null
-    },
-    {
-      "date": "Friday 25 11 PM",
-      "swells": [
-        {
-          "height_m": 1.4,
-          "direction": "W",
-          "period_s": 15,
-          "energy_kj": 892
-        },
-        {
-          "height_m": 0.4,
-          "direction": "WNW",
-          "period_s": 10,
-          "energy_kj": 32
-        },
-        {
-          "height_m": 0.6,
-          "direction": "W",
-          "period_s": 4,
-          "energy_kj": 11
-        }
-      ],
-      "combined_energy_kj": 935,
-      "wind_state": "on",
-      "rating": 0,
-      "wind": {
-        "speed_kmh": 20.0,
-        "direction": "WNW"
-      },
-      "tide_high": null,
-      "tide_low": {
-        "time": "10:43PM",
-        "height_m": 0.15
-      },
-      "air_temp_c": 19.0,
-      "rain_mm": 0.0,
-      "weather_code": "clear",
-      "sunrise": null,
-      "sunset": null,
-      "ocean_current_alongshore_kmh": null,
-      "ocean_current_orientation": null
-    },
-    {
       "date": "Saturday 26  2 AM",
       "swells": [
         {
@@ -141,17 +18,17 @@
         }
       ],
       "combined_energy_kj": 949,
-      "wind_state": "cross-on",
+      "wind_state": "on",
       "rating": 0,
       "wind": {
-        "speed_kmh": 20.0,
+        "speed_kmh": 19.0,
         "direction": "WNW"
       },
       "tide_high": null,
       "tide_low": null,
       "air_temp_c": 18.0,
       "rain_mm": 0.0,
-      "weather_code": "part cloud",
+      "weather_code": "cloud",
       "sunrise": null,
       "sunset": null,
       "ocean_current_alongshore_kmh": null,
@@ -204,7 +81,7 @@
       "wind_state": "on",
       "rating": -2,
       "wind": {
-        "speed_kmh": 11.0,
+        "speed_kmh": 14.0,
         "direction": "W"
       },
       "tide_high": {
@@ -212,7 +89,7 @@
         "height_m": 3.96
       },
       "tide_low": null,
-      "air_temp_c": 19.0,
+      "air_temp_c": 18.0,
       "rain_mm": 0.0,
       "weather_code": "cloud",
       "sunrise": null,
@@ -240,8 +117,8 @@
       "wind_state": "cross-on",
       "rating": -2,
       "wind": {
-        "speed_kmh": 8.0,
-        "direction": "SW"
+        "speed_kmh": 7.0,
+        "direction": "WSW"
       },
       "tide_high": null,
       "tide_low": {
@@ -250,7 +127,7 @@
       },
       "air_temp_c": 19.0,
       "rain_mm": 0.0,
-      "weather_code": "part cloud",
+      "weather_code": "cloud",
       "sunrise": null,
       "sunset": null,
       "ocean_current_alongshore_kmh": null,
@@ -274,9 +151,9 @@
       ],
       "combined_energy_kj": 804,
       "wind_state": "on",
-      "rating": -1,
+      "rating": -2,
       "wind": {
-        "speed_kmh": 11.0,
+        "speed_kmh": 10.0,
         "direction": "W"
       },
       "tide_high": null,
@@ -300,7 +177,7 @@
         }
       ],
       "combined_energy_kj": 673,
-      "wind_state": "on",
+      "wind_state": "cross-on",
       "rating": -1,
       "wind": {
         "speed_kmh": 11.0,
@@ -328,9 +205,9 @@
       ],
       "combined_energy_kj": 573,
       "wind_state": "cross-on",
-      "rating": -1,
+      "rating": -2,
       "wind": {
-        "speed_kmh": 11.0,
+        "speed_kmh": 10.0,
         "direction": "NW"
       },
       "tide_high": {
@@ -340,7 +217,7 @@
       "tide_low": null,
       "air_temp_c": 18.0,
       "rain_mm": 0.0,
-      "weather_code": "cloud",
+      "weather_code": "part cloud",
       "sunrise": null,
       "sunset": null,
       "ocean_current_alongshore_kmh": null,
@@ -350,18 +227,24 @@
       "date": "Saturday 26 11 PM",
       "swells": [
         {
-          "height_m": 1.2,
+          "height_m": 1.1,
           "direction": "W",
           "period_s": 12,
-          "energy_kj": 432
+          "energy_kj": 365
+        },
+        {
+          "height_m": 0.2,
+          "direction": "WNW",
+          "period_s": 4,
+          "energy_kj": 2
         }
       ],
-      "combined_energy_kj": 432,
+      "combined_energy_kj": 367,
       "wind_state": "cross-off",
       "rating": 2,
       "wind": {
-        "speed_kmh": 9.0,
-        "direction": "NNE"
+        "speed_kmh": 10.0,
+        "direction": "NE"
       },
       "tide_high": null,
       "tide_low": null,
@@ -387,15 +270,15 @@
       "wind_state": "off",
       "rating": 2,
       "wind": {
-        "speed_kmh": 6.0,
-        "direction": "E"
+        "speed_kmh": 8.0,
+        "direction": "ESE"
       },
       "tide_high": null,
       "tide_low": {
         "time": "11:17PM",
         "height_m": -0.05
       },
-      "air_temp_c": 18.0,
+      "air_temp_c": 19.0,
       "rain_mm": 0.0,
       "weather_code": "clear",
       "sunrise": null,
@@ -417,12 +300,12 @@
       "wind_state": "cross-off",
       "rating": 2,
       "wind": {
-        "speed_kmh": 11.0,
+        "speed_kmh": 15.0,
         "direction": "SE"
       },
       "tide_high": null,
       "tide_low": null,
-      "air_temp_c": 18.0,
+      "air_temp_c": 19.0,
       "rain_mm": 0.0,
       "weather_code": "cloud",
       "sunrise": "7:56",
@@ -444,15 +327,15 @@
       "wind_state": "cross-off",
       "rating": -1,
       "wind": {
-        "speed_kmh": 17.0,
-        "direction": "ESE"
+        "speed_kmh": 16.0,
+        "direction": "SE"
       },
       "tide_high": {
         "time": "5:29AM",
         "height_m": 4.11
       },
       "tide_low": null,
-      "air_temp_c": 19.0,
+      "air_temp_c": 20.0,
       "rain_mm": 0.0,
       "weather_code": "cloud",
       "sunrise": null,
@@ -474,7 +357,7 @@
       "wind_state": "cross-off",
       "rating": 2,
       "wind": {
-        "speed_kmh": 8.0,
+        "speed_kmh": 11.0,
         "direction": "SSE"
       },
       "tide_high": null,
@@ -498,10 +381,10 @@
         }
       ],
       "combined_energy_kj": 260,
-      "wind_state": "on",
+      "wind_state": "cross-on",
       "rating": 0,
       "wind": {
-        "speed_kmh": 13.0,
+        "speed_kmh": 15.0,
         "direction": "WSW"
       },
       "tide_high": null,
@@ -509,9 +392,9 @@
         "time": "11:32AM",
         "height_m": -0.04
       },
-      "air_temp_c": 23.0,
+      "air_temp_c": 22.0,
       "rain_mm": 0.0,
-      "weather_code": "part cloud",
+      "weather_code": "cloud",
       "sunrise": null,
       "sunset": null,
       "ocean_current_alongshore_kmh": null,
@@ -528,17 +411,17 @@
         }
       ],
       "combined_energy_kj": 209,
-      "wind_state": "on",
+      "wind_state": "cross-on",
       "rating": 0,
       "wind": {
         "speed_kmh": 11.0,
-        "direction": "W"
+        "direction": "NW"
       },
       "tide_high": null,
       "tide_low": null,
       "air_temp_c": 21.0,
       "rain_mm": 0.0,
-      "weather_code": "cloud",
+      "weather_code": "part cloud",
       "sunrise": null,
       "sunset": "7:52",
       "ocean_current_alongshore_kmh": null,
@@ -558,8 +441,8 @@
       "wind_state": "cross-on",
       "rating": 0,
       "wind": {
-        "speed_kmh": 13.0,
-        "direction": "NNW"
+        "speed_kmh": 14.0,
+        "direction": "NW"
       },
       "tide_high": {
         "time": "5:41PM",
@@ -568,7 +451,7 @@
       "tide_low": null,
       "air_temp_c": 20.0,
       "rain_mm": 0.0,
-      "weather_code": "cloud",
+      "weather_code": "part cloud",
       "sunrise": null,
       "sunset": null,
       "ocean_current_alongshore_kmh": null,
@@ -582,14 +465,20 @@
           "direction": "WNW",
           "period_s": 11,
           "energy_kj": 158
+        },
+        {
+          "height_m": 0.2,
+          "direction": "NNW",
+          "period_s": 3,
+          "energy_kj": 1
         }
       ],
-      "combined_energy_kj": 158,
+      "combined_energy_kj": 159,
       "wind_state": "cross-on",
       "rating": 0,
       "wind": {
-        "speed_kmh": 9.0,
-        "direction": "NNW"
+        "speed_kmh": 12.0,
+        "direction": "NW"
       },
       "tide_high": null,
       "tide_low": null,
@@ -600,45 +489,243 @@
       "sunset": null,
       "ocean_current_alongshore_kmh": null,
       "ocean_current_orientation": null
-    }
-  ],
-  "sixteen_day": [
+    },
     {
-      "date": "Friday 25 Night",
+      "date": "Monday 28  2 AM",
       "swells": [
         {
-          "height_m": 1.5,
-          "direction": "W",
-          "period_s": 14,
-          "energy_kj": 932
-        },
-        {
-          "height_m": 0.7,
-          "direction": "W",
-          "period_s": 4,
-          "energy_kj": 17
+          "height_m": 0.8,
+          "direction": "WNW",
+          "period_s": 11,
+          "energy_kj": 153
         }
       ],
-      "combined_energy_kj": 949,
-      "wind_state": "cross-on",
+      "combined_energy_kj": 153,
+      "wind_state": "cross",
       "rating": 0,
       "wind": {
-        "speed_kmh": 20.0,
-        "direction": "WNW"
+        "speed_kmh": 7.0,
+        "direction": "N"
       },
       "tide_high": null,
       "tide_low": {
-        "time": "10:43PM",
-        "height_m": 0.15
+        "time": "11:53PM",
+        "height_m": -0.15
       },
       "air_temp_c": 20.0,
       "rain_mm": 0.0,
-      "weather_code": "clear",
+      "weather_code": "cloud",
       "sunrise": null,
-      "sunset": "7:57",
+      "sunset": null,
       "ocean_current_alongshore_kmh": null,
       "ocean_current_orientation": null
     },
+    {
+      "date": "Monday 28  5 AM",
+      "swells": [
+        {
+          "height_m": 0.8,
+          "direction": "WNW",
+          "period_s": 11,
+          "energy_kj": 153
+        }
+      ],
+      "combined_energy_kj": 153,
+      "wind_state": "off",
+      "rating": 1,
+      "wind": {
+        "speed_kmh": 22.0,
+        "direction": "E"
+      },
+      "tide_high": null,
+      "tide_low": null,
+      "air_temp_c": 19.0,
+      "rain_mm": 1.0,
+      "weather_code": "light rain",
+      "sunrise": "7:58",
+      "sunset": null,
+      "ocean_current_alongshore_kmh": null,
+      "ocean_current_orientation": null
+    },
+    {
+      "date": "Monday 28  8 AM",
+      "swells": [
+        {
+          "height_m": 0.8,
+          "direction": "WNW",
+          "period_s": 11,
+          "energy_kj": 153
+        }
+      ],
+      "combined_energy_kj": 153,
+      "wind_state": "off",
+      "rating": 1,
+      "wind": {
+        "speed_kmh": 17.0,
+        "direction": "E"
+      },
+      "tide_high": {
+        "time": "5:58AM",
+        "height_m": 4.18
+      },
+      "tide_low": null,
+      "air_temp_c": 18.0,
+      "rain_mm": 1.0,
+      "weather_code": "light rain",
+      "sunrise": null,
+      "sunset": null,
+      "ocean_current_alongshore_kmh": null,
+      "ocean_current_orientation": null
+    },
+    {
+      "date": "Monday 28 11 AM",
+      "swells": [
+        {
+          "height_m": 0.9,
+          "direction": "WNW",
+          "period_s": 11,
+          "energy_kj": 194
+        }
+      ],
+      "combined_energy_kj": 194,
+      "wind_state": "cross-off",
+      "rating": 1,
+      "wind": {
+        "speed_kmh": 10.0,
+        "direction": "SE"
+      },
+      "tide_high": null,
+      "tide_low": null,
+      "air_temp_c": 19.0,
+      "rain_mm": 0.0,
+      "weather_code": "cloud",
+      "sunrise": null,
+      "sunset": null,
+      "ocean_current_alongshore_kmh": null,
+      "ocean_current_orientation": null
+    },
+    {
+      "date": "Monday 28  2 PM",
+      "swells": [
+        {
+          "height_m": 1.0,
+          "direction": "W",
+          "period_s": 11,
+          "energy_kj": 247
+        }
+      ],
+      "combined_energy_kj": 247,
+      "wind_state": "cross",
+      "rating": -1,
+      "wind": {
+        "speed_kmh": 13.0,
+        "direction": "SSW"
+      },
+      "tide_high": null,
+      "tide_low": {
+        "time": "12:09PM",
+        "height_m": -0.12
+      },
+      "air_temp_c": 21.0,
+      "rain_mm": 0.0,
+      "weather_code": "cloud",
+      "sunrise": null,
+      "sunset": null,
+      "ocean_current_alongshore_kmh": null,
+      "ocean_current_orientation": null
+    },
+    {
+      "date": "Monday 28  5 PM",
+      "swells": [
+        {
+          "height_m": 1.0,
+          "direction": "W",
+          "period_s": 11,
+          "energy_kj": 251
+        },
+        {
+          "height_m": 0.3,
+          "direction": "W",
+          "period_s": 13,
+          "energy_kj": 32
+        }
+      ],
+      "combined_energy_kj": 283,
+      "wind_state": "on",
+      "rating": -1,
+      "wind": {
+        "speed_kmh": 7.0,
+        "direction": "W"
+      },
+      "tide_high": null,
+      "tide_low": null,
+      "air_temp_c": 21.0,
+      "rain_mm": 0.0,
+      "weather_code": "cloud",
+      "sunrise": null,
+      "sunset": "7:51",
+      "ocean_current_alongshore_kmh": null,
+      "ocean_current_orientation": null
+    },
+    {
+      "date": "Monday 28  8 PM",
+      "swells": [
+        {
+          "height_m": 1.1,
+          "direction": "W",
+          "period_s": 12,
+          "energy_kj": 347
+        }
+      ],
+      "combined_energy_kj": 347,
+      "wind_state": "glass",
+      "rating": 2,
+      "wind": {
+        "speed_kmh": 3.0,
+        "direction": "WNW"
+      },
+      "tide_high": {
+        "time": "6:12PM",
+        "height_m": 4.3
+      },
+      "tide_low": null,
+      "air_temp_c": 21.0,
+      "rain_mm": 0.0,
+      "weather_code": "cloud",
+      "sunrise": null,
+      "sunset": null,
+      "ocean_current_alongshore_kmh": null,
+      "ocean_current_orientation": null
+    },
+    {
+      "date": "Monday 28 11 PM",
+      "swells": [
+        {
+          "height_m": 1.0,
+          "direction": "W",
+          "period_s": 12,
+          "energy_kj": 284
+        }
+      ],
+      "combined_energy_kj": 284,
+      "wind_state": "cross-off",
+      "rating": -1,
+      "wind": {
+        "speed_kmh": 17.0,
+        "direction": "SE"
+      },
+      "tide_high": null,
+      "tide_low": null,
+      "air_temp_c": 23.0,
+      "rain_mm": 0.0,
+      "weather_code": "cloud",
+      "sunrise": null,
+      "sunset": null,
+      "ocean_current_alongshore_kmh": null,
+      "ocean_current_orientation": null
+    }
+  ],
+  "sixteen_day": [
     {
       "date": "Saturday 26 AM",
       "swells": [
@@ -659,20 +746,17 @@
       "wind_state": "cross-on",
       "rating": -2,
       "wind": {
-        "speed_kmh": 8.0,
-        "direction": "SW"
+        "speed_kmh": 7.0,
+        "direction": "WSW"
       },
-      "tide_high": {
-        "time": "5:01AM",
-        "height_m": 3.96
-      },
+      "tide_high": null,
       "tide_low": {
         "time": "10:55AM",
         "height_m": 0.14
       },
       "air_temp_c": 19.0,
       "rain_mm": 0.0,
-      "weather_code": "part cloud",
+      "weather_code": "cloud",
       "sunrise": "7:54",
       "sunset": null,
       "ocean_current_alongshore_kmh": null,
@@ -689,7 +773,7 @@
         }
       ],
       "combined_energy_kj": 673,
-      "wind_state": "on",
+      "wind_state": "cross-on",
       "rating": -1,
       "wind": {
         "speed_kmh": 11.0,
@@ -702,7 +786,7 @@
       "tide_low": null,
       "air_temp_c": 19.0,
       "rain_mm": 0.0,
-      "weather_code": "clear",
+      "weather_code": "part cloud",
       "sunrise": null,
       "sunset": "7:54",
       "ocean_current_alongshore_kmh": null,
@@ -722,8 +806,8 @@
       "wind_state": "off",
       "rating": 2,
       "wind": {
-        "speed_kmh": 6.0,
-        "direction": "E"
+        "speed_kmh": 8.0,
+        "direction": "ESE"
       },
       "tide_high": null,
       "tide_low": {
@@ -752,7 +836,7 @@
       "wind_state": "cross-off",
       "rating": 2,
       "wind": {
-        "speed_kmh": 8.0,
+        "speed_kmh": 11.0,
         "direction": "SSE"
       },
       "tide_high": {
@@ -765,7 +849,7 @@
       },
       "air_temp_c": 21.0,
       "rain_mm": 0.0,
-      "weather_code": "cloud",
+      "weather_code": "part cloud",
       "sunrise": "7:56",
       "sunset": null,
       "ocean_current_alongshore_kmh": null,
@@ -782,18 +866,18 @@
         }
       ],
       "combined_energy_kj": 209,
-      "wind_state": "on",
+      "wind_state": "cross-on",
       "rating": 0,
       "wind": {
         "speed_kmh": 11.0,
-        "direction": "W"
+        "direction": "NW"
       },
       "tide_high": {
         "time": "5:41PM",
         "height_m": 4.31
       },
       "tide_low": null,
-      "air_temp_c": 23.0,
+      "air_temp_c": 22.0,
       "rain_mm": 0.0,
       "weather_code": "part cloud",
       "sunrise": null,
@@ -815,7 +899,7 @@
       "wind_state": "cross",
       "rating": 0,
       "wind": {
-        "speed_kmh": 15.0,
+        "speed_kmh": 7.0,
         "direction": "N"
       },
       "tide_high": null,
@@ -825,7 +909,7 @@
       },
       "air_temp_c": 20.0,
       "rain_mm": 1.0,
-      "weather_code": "light rain",
+      "weather_code": "rain showers",
       "sunrise": null,
       "sunset": null,
       "ocean_current_alongshore_kmh": null,
@@ -838,15 +922,15 @@
           "height_m": 0.9,
           "direction": "WNW",
           "period_s": 11,
-          "energy_kj": 198
+          "energy_kj": 194
         }
       ],
-      "combined_energy_kj": 198,
+      "combined_energy_kj": 194,
       "wind_state": "cross-off",
-      "rating": 0,
+      "rating": 1,
       "wind": {
-        "speed_kmh": 20.0,
-        "direction": "SSE"
+        "speed_kmh": 10.0,
+        "direction": "SE"
       },
       "tide_high": {
         "time": "5:58AM",
@@ -857,8 +941,8 @@
         "height_m": -0.12
       },
       "air_temp_c": 19.0,
-      "rain_mm": 0.0,
-      "weather_code": "cloud",
+      "rain_mm": 1.0,
+      "weather_code": "light rain",
       "sunrise": "7:58",
       "sunset": null,
       "ocean_current_alongshore_kmh": null,
@@ -868,33 +952,33 @@
       "date": "Monday 28 PM",
       "swells": [
         {
-          "height_m": 0.9,
-          "direction": "WNW",
+          "height_m": 1.0,
+          "direction": "W",
           "period_s": 11,
-          "energy_kj": 205
+          "energy_kj": 251
         },
         {
-          "height_m": 0.4,
+          "height_m": 0.3,
           "direction": "W",
-          "period_s": 14,
-          "energy_kj": 57
+          "period_s": 13,
+          "energy_kj": 32
         }
       ],
-      "combined_energy_kj": 262,
-      "wind_state": "cross-on",
+      "combined_energy_kj": 283,
+      "wind_state": "on",
       "rating": -1,
       "wind": {
-        "speed_kmh": 6.0,
-        "direction": "WSW"
+        "speed_kmh": 7.0,
+        "direction": "W"
       },
       "tide_high": {
         "time": "6:12PM",
         "height_m": 4.3
       },
       "tide_low": null,
-      "air_temp_c": 25.0,
+      "air_temp_c": 21.0,
       "rain_mm": 0.0,
-      "weather_code": "part cloud",
+      "weather_code": "cloud",
       "sunrise": null,
       "sunset": "7:51",
       "ocean_current_alongshore_kmh": null,
@@ -907,14 +991,20 @@
           "height_m": 1.0,
           "direction": "W",
           "period_s": 12,
-          "energy_kj": 284
+          "energy_kj": 279
+        },
+        {
+          "height_m": -0.2,
+          "direction": "SSE",
+          "period_s": 2,
+          "energy_kj": 1
         }
       ],
-      "combined_energy_kj": 284,
+      "combined_energy_kj": 279,
       "wind_state": "cross-off",
-      "rating": -1,
+      "rating": 0,
       "wind": {
-        "speed_kmh": 22.0,
+        "speed_kmh": 31.0,
         "direction": "SSE"
       },
       "tide_high": null,
@@ -922,9 +1012,9 @@
         "time": "00:30AM",
         "height_m": -0.12
       },
-      "air_temp_c": 24.0,
-      "rain_mm": 12.0,
-      "weather_code": "thunderstorm",
+      "air_temp_c": 23.0,
+      "rain_mm": 0.0,
+      "weather_code": "cloud",
       "sunrise": null,
       "sunset": null,
       "ocean_current_alongshore_kmh": null,
@@ -937,20 +1027,20 @@
           "height_m": 0.9,
           "direction": "WNW",
           "period_s": 11,
-          "energy_kj": 209
+          "energy_kj": 213
         },
         {
           "height_m": -0.7,
           "direction": "SSE",
           "period_s": 4,
-          "energy_kj": 13
+          "energy_kj": 11
         }
       ],
-      "combined_energy_kj": 209,
+      "combined_energy_kj": 213,
       "wind_state": "cross-off",
       "rating": 0,
       "wind": {
-        "speed_kmh": 27.0,
+        "speed_kmh": 26.0,
         "direction": "SSE"
       },
       "tide_high": {
@@ -979,17 +1069,17 @@
           "energy_kj": 158
         },
         {
-          "height_m": 1.0,
+          "height_m": 0.6,
           "direction": "SSW",
           "period_s": 5,
-          "energy_kj": 50
+          "energy_kj": 17
         }
       ],
-      "combined_energy_kj": 208,
-      "wind_state": "cross",
+      "combined_energy_kj": 175,
+      "wind_state": "cross-on",
       "rating": 0,
       "wind": {
-        "speed_kmh": 27.0,
+        "speed_kmh": 21.0,
         "direction": "SSW"
       },
       "tide_high": {
@@ -997,7 +1087,7 @@
         "height_m": 4.18
       },
       "tide_low": null,
-      "air_temp_c": 25.0,
+      "air_temp_c": 26.0,
       "rain_mm": 0.0,
       "weather_code": "clear",
       "sunrise": null,
@@ -1015,25 +1105,25 @@
           "energy_kj": 75
         },
         {
-          "height_m": 0.6,
-          "direction": "SW",
+          "height_m": 1.0,
+          "direction": "S",
           "period_s": 5,
-          "energy_kj": 20
+          "energy_kj": 49
         }
       ],
-      "combined_energy_kj": 95,
+      "combined_energy_kj": 124,
       "wind_state": "cross-off",
       "rating": 0,
       "wind": {
-        "speed_kmh": 27.0,
-        "direction": "SE"
+        "speed_kmh": 26.0,
+        "direction": "SSE"
       },
       "tide_high": null,
       "tide_low": {
         "time": "1:10AM",
         "height_m": 0.01
       },
-      "air_temp_c": 25.0,
+      "air_temp_c": 27.0,
       "rain_mm": 0.0,
       "weather_code": "part cloud",
       "sunrise": null,
@@ -1045,30 +1135,24 @@
       "date": "Wednesday 30 AM",
       "swells": [
         {
-          "height_m": 1.0,
+          "height_m": 0.9,
           "direction": "W",
-          "period_s": 11,
-          "energy_kj": 240
+          "period_s": 12,
+          "energy_kj": 235
         },
         {
-          "height_m": 0.5,
-          "direction": "W",
-          "period_s": 6,
-          "energy_kj": 16
-        },
-        {
-          "height_m": 0.2,
-          "direction": "SSW",
-          "period_s": 4,
-          "energy_kj": 2
+          "height_m": 1.1,
+          "direction": "SW",
+          "period_s": 5,
+          "energy_kj": 64
         }
       ],
-      "combined_energy_kj": 258,
-      "wind_state": "cross-on",
+      "combined_energy_kj": 299,
+      "wind_state": "on",
       "rating": 0,
       "wind": {
-        "speed_kmh": 35.0,
-        "direction": "SW"
+        "speed_kmh": 29.0,
+        "direction": "W"
       },
       "tide_high": {
         "time": "7:01AM",
@@ -1090,18 +1174,30 @@
       "date": "Wednesday 30 PM",
       "swells": [
         {
-          "height_m": 1.1,
+          "height_m": 1.3,
           "direction": "W",
-          "period_s": 10,
-          "energy_kj": 270
+          "period_s": 11,
+          "energy_kj": 389
+        },
+        {
+          "height_m": 0.4,
+          "direction": "SSW",
+          "period_s": 5,
+          "energy_kj": 8
+        },
+        {
+          "height_m": 0.7,
+          "direction": "WNW",
+          "period_s": 5,
+          "energy_kj": 28
         }
       ],
-      "combined_energy_kj": 270,
-      "wind_state": "cross-on",
+      "combined_energy_kj": 425,
+      "wind_state": "on",
       "rating": 0,
       "wind": {
-        "speed_kmh": 19.0,
-        "direction": "WNW"
+        "speed_kmh": 22.0,
+        "direction": "W"
       },
       "tide_high": {
         "time": "7:21PM",
@@ -1109,7 +1205,7 @@
       },
       "tide_low": null,
       "air_temp_c": 20.0,
-      "rain_mm": 2.0,
+      "rain_mm": 1.0,
       "weather_code": "light rain",
       "sunrise": null,
       "sunset": "7:47",
@@ -1120,23 +1216,23 @@
       "date": "Wednesday 30 Night",
       "swells": [
         {
-          "height_m": 1.4,
+          "height_m": 1.2,
           "direction": "W",
-          "period_s": 12,
-          "energy_kj": 526
+          "period_s": 10,
+          "energy_kj": 273
         },
         {
-          "height_m": 0.2,
-          "direction": "SSW",
-          "period_s": 4,
-          "energy_kj": 1
+          "height_m": 0.5,
+          "direction": "W",
+          "period_s": 12,
+          "energy_kj": 72
         }
       ],
-      "combined_energy_kj": 527,
+      "combined_energy_kj": 345,
       "wind_state": "on",
       "rating": 0,
       "wind": {
-        "speed_kmh": 16.0,
+        "speed_kmh": 20.0,
         "direction": "W"
       },
       "tide_high": null,
@@ -1146,7 +1242,7 @@
       },
       "air_temp_c": 20.0,
       "rain_mm": 0.0,
-      "weather_code": "cloud",
+      "weather_code": "part cloud",
       "sunrise": null,
       "sunset": null,
       "ocean_current_alongshore_kmh": null,
@@ -1156,17 +1252,17 @@
       "date": "Thursday  1 AM",
       "swells": [
         {
-          "height_m": 2.2,
+          "height_m": 2.0,
           "direction": "W",
           "period_s": 14,
-          "energy_kj": 1968
+          "energy_kj": 1429
         }
       ],
-      "combined_energy_kj": 1968,
+      "combined_energy_kj": 1429,
       "wind_state": "on",
-      "rating": 11,
+      "rating": -2,
       "wind": {
-        "speed_kmh": 9.0,
+        "speed_kmh": 12.0,
         "direction": "WNW"
       },
       "tide_high": {
@@ -1174,9 +1270,9 @@
         "height_m": 3.87
       },
       "tide_low": null,
-      "air_temp_c": 20.0,
+      "air_temp_c": 19.0,
       "rain_mm": 0.0,
-      "weather_code": "part cloud",
+      "weather_code": "clear",
       "sunrise": "8:00",
       "sunset": null,
       "ocean_current_alongshore_kmh": null,
@@ -1186,17 +1282,17 @@
       "date": "Thursday  1 PM",
       "swells": [
         {
-          "height_m": 2.2,
+          "height_m": 2.1,
           "direction": "W",
           "period_s": 14,
-          "energy_kj": 1864
+          "energy_kj": 1627
         }
       ],
-      "combined_energy_kj": 1864,
+      "combined_energy_kj": 1627,
       "wind_state": "cross-on",
       "rating": 11,
       "wind": {
-        "speed_kmh": 14.0,
+        "speed_kmh": 15.0,
         "direction": "NW"
       },
       "tide_high": null,
@@ -1206,7 +1302,7 @@
       },
       "air_temp_c": 20.0,
       "rain_mm": 0.0,
-      "weather_code": "part cloud",
+      "weather_code": "clear",
       "sunrise": null,
       "sunset": "7:45",
       "ocean_current_alongshore_kmh": null,
@@ -1219,14 +1315,20 @@
           "height_m": 1.8,
           "direction": "W",
           "period_s": 14,
-          "energy_kj": 1208
+          "energy_kj": 1190
+        },
+        {
+          "height_m": 0.5,
+          "direction": "N",
+          "period_s": 4,
+          "energy_kj": 6
         }
       ],
-      "combined_energy_kj": 1208,
+      "combined_energy_kj": 1196,
       "wind_state": "cross-off",
-      "rating": 4,
+      "rating": -3,
       "wind": {
-        "speed_kmh": 11.0,
+        "speed_kmh": 18.0,
         "direction": "NNE"
       },
       "tide_high": {
@@ -1239,7 +1341,112 @@
       },
       "air_temp_c": 19.0,
       "rain_mm": 0.0,
-      "weather_code": "clear",
+      "weather_code": "part cloud",
+      "sunrise": null,
+      "sunset": null,
+      "ocean_current_alongshore_kmh": null,
+      "ocean_current_orientation": null
+    },
+    {
+      "date": "Friday  2 AM",
+      "swells": [
+        {
+          "height_m": 1.6,
+          "direction": "WNW",
+          "period_s": 14,
+          "energy_kj": 874
+        }
+      ],
+      "combined_energy_kj": 874,
+      "wind_state": "cross-off",
+      "rating": -2,
+      "wind": {
+        "speed_kmh": 19.0,
+        "direction": "ENE"
+      },
+      "tide_high": {
+        "time": "8:22AM",
+        "height_m": 3.59
+      },
+      "tide_low": null,
+      "air_temp_c": 18.0,
+      "rain_mm": 0.0,
+      "weather_code": "part cloud",
+      "sunrise": "8:03",
+      "sunset": null,
+      "ocean_current_alongshore_kmh": null,
+      "ocean_current_orientation": null
+    },
+    {
+      "date": "Friday  2 PM",
+      "swells": [
+        {
+          "height_m": 1.3,
+          "direction": "W",
+          "period_s": 13,
+          "energy_kj": 547
+        },
+        {
+          "height_m": 0.5,
+          "direction": "N",
+          "period_s": 3,
+          "energy_kj": 5
+        }
+      ],
+      "combined_energy_kj": 552,
+      "wind_state": "cross-off",
+      "rating": -2,
+      "wind": {
+        "speed_kmh": 18.0,
+        "direction": "NNE"
+      },
+      "tide_high": null,
+      "tide_low": {
+        "time": "3:10PM",
+        "height_m": 0.61
+      },
+      "air_temp_c": 24.0,
+      "rain_mm": 0.0,
+      "weather_code": "part cloud",
+      "sunrise": null,
+      "sunset": "7:44",
+      "ocean_current_alongshore_kmh": null,
+      "ocean_current_orientation": null
+    },
+    {
+      "date": "Friday  2 Night",
+      "swells": [
+        {
+          "height_m": 1.1,
+          "direction": "W",
+          "period_s": 13,
+          "energy_kj": 402
+        },
+        {
+          "height_m": -0.6,
+          "direction": "NE",
+          "period_s": 3,
+          "energy_kj": 9
+        }
+      ],
+      "combined_energy_kj": 402,
+      "wind_state": "cross-off",
+      "rating": -1,
+      "wind": {
+        "speed_kmh": 24.0,
+        "direction": "NE"
+      },
+      "tide_high": {
+        "time": "9:00PM",
+        "height_m": 3.27
+      },
+      "tide_low": {
+        "time": "3:36AM",
+        "height_m": 0.9
+      },
+      "air_temp_c": 24.0,
+      "rain_mm": 0.0,
+      "weather_code": "part cloud",
       "sunrise": null,
       "sunset": null,
       "ocean_current_alongshore_kmh": null,
